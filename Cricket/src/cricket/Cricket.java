@@ -6,6 +6,7 @@
 package cricket;
 
 import java.util.Scanner;
+import java.util.Random;
 public class Cricket {
 
     /**
@@ -16,7 +17,7 @@ public class Cricket {
     
        String name1,name2 ="";
        int wicket = 0;
-       int random, ball, score, over =0;
+       int random=0, ball = 0, score =0, over =0;
        
        Scanner s = new Scanner(System.in); 
        
@@ -27,8 +28,26 @@ public class Cricket {
        
         System.out.println("Team 1: "+name1);
         System.out.println("Team 2: "+name2);
-       
         
+        if (wicket < 5){
+            if( ball < 15){
+                System.out.println("Enter key p for batting");
+                String key = s.nextLine();
+                String in = "p";
+                
+               if(in.equals(key)){
+                   int[] arr = {0,1,2,3,4,6,9};
+                   Random r = new Random();
+                   int randomNumber=r.nextInt(arr.length);
+      	           System.out.println(arr[randomNumber]);
+                   
+                           
+               }
+               else{
+                   System.out.println("Invalid input. Enter p again");
+               }       
+            }
+        }
+       
     }
-    
 }
